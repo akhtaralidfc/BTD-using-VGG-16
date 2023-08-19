@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <link rel="shortcut icon" href="./contact.png" type="image/x-icon">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <title>CONTACT US!</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <style>
+        *{
+  margin: 0;
+  padding: 0;
+  /* font-family: 'poppins',sans-serif;
+  box-sizing: border-box; */
+}
+body{
+    /* background-image: url({%static 'images/tumor.png' %}); */
+    background-color: #7b2cbf;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+.container{
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: #aca9e6; */
+}
+form{
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 2vw 4vw;
+  width: 80%;
+  max-width: 549px;
+  border-radius: 10px;
+}
+form h3{
+  color: #555;
+  margin-bottom: 25px;
+  font-weight: 800;
+}
+form label{
+  color: #555;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+form input,form textarea{
+  border: 0;
+  background-color: #f5f5f5;
+  margin: 10px 0;
+  padding: 14px;
+  font-size: 16px;
+  /* outline: none; */
+}
+.btn,.g-recaptcha{
+  display: flex;
+  justify-content: center;
+  margin: 3px;
+}
+.btn> .inputbtn{
+   padding: 12px;
+   background-color: #000000;
+   border: 0;
+   /* color: white; */
+   font-size: 18px;
+   cursor: pointer;
+   width: 150px;
+   border-radius: 30px;
+   display: flex;
+   color: white;
+   justify-content: center;
+}
+label{
+  color: #000000;
+}
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary p-4" data-bs-theme="dark" style="background-color: #000000 !important; border-bottom: 0.5px solid white;">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="../">π Labs</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="../">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../contact.html">Contact us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" aria-disabled="true">Book an appointment</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <div class="container">
+        <form action="https://formspree.io/f/xbjepdkg" method="POST">
+            <h3 style="color: #000000;">REACH OUT TO US!</h3>
+            <label for="username" style="color: #000000;">Name:</label>
+            <input type="text" id="username" name="Name" placeholder="Your Name" required>
+            <label for="email" style="color: #000000;">Email:</label>
+            <input type="email" id="email" name="Email" placeholder="Email id" required>
+            <label for="num" style="color: #000000;">Phone No:</label>
+            <input type="number" id="num" name="Phone Number" pattern="[1-9]{1}[0-9]{9}" placeholder="+91" required>
+            <label for="msg" style="color: #000000;">How can we help you?</label>
+            <textarea id="tarea" name="Message" rows="3" cols="50" placeholder="Type your message here..."></textarea>
+            <!-- <div class="g-recaptcha" data-sitekey="6LdtY1YlAAAAALxXapPRR_hatbJV6zX-P4_b3ZEd" ></div> -->
+            <div class="btn">
+                <input type="button" value="Send" id="button1" class="inputbtn" onclick="this.form.submit();">
+            </div>
+        </form>
+    </div>
+    <script>
+        function enableBtn(){
+            document.getElementById("button1").disabled = false;
+        }
+    </script>
+</body>
+
+</html>
